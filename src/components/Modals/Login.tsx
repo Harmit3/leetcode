@@ -4,6 +4,7 @@ import { authModalState } from '@/atoms/authModalAtom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '@/firebase/firebase';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 type LoginProps = {
 
@@ -43,13 +44,14 @@ const Login: React.FC<LoginProps> = () => {
 
         } catch (error: any) {
 
-            alert(error.message);
+            toast.error(error.message,{position:'top-center',autoClose:3000,theme:'dark'});
         }
     };
     
 
    useEffect(()=>{
-      if(error) alert(error.message);
+      if(error) toast.error(error.message,{position:'top-center',autoClose:3000,theme:'dark'});
+      
    },[error]);
 
 
