@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import react from 'react';
+import Image from 'next/image';
 import { useSetRecoilState } from 'recoil';
 import { authModalState } from '@/atoms/authModalAtom';
 
@@ -12,10 +13,10 @@ const Navbar: React.FC<NavbarProps> = () => {
     const setAuthModalState = useSetRecoilState(authModalState);
     const handleClick = () => {
         setAuthModalState((prev) => ({ ...prev, isOpen: true}));
-    }
+    };
     return <div className='flex items-center justify-between h-20  px-4 md:px-12'>
         <Link href="/" className='flex items-center justify-center h-20'>
-            <img src="/logo.png" alt="LeetClone" className='h-full object-contain' />
+            <Image src='/logo.png' alt='Leetclone' height={200} width={200} />
         </Link>
 
         <div className='hidden md:flex items-center space-x-6' >
