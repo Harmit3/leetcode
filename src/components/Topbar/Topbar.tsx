@@ -9,6 +9,7 @@ import { BsList } from 'react-icons/bs';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useSetRecoilState } from 'recoil';
 import Image from 'next/image';
+import Timer from '../Timer/Timer';
 
 type TopbarProps = {
   problemPage?: boolean;
@@ -32,7 +33,7 @@ const Topbar: React.FC<TopbarProps> = ({problemPage}) => {
               <FaChevronLeft />
             </div>
 
-            <Link href='/' className='flex items-center gap-2 font-medium max-w-[170px] text-dark-gray--8 cursor-pointer'>
+            <Link href='/' className='flex items-center gap-2 font-medium max-w-[170px] text-dark-gray-8 cursor-pointer'>
               <div>
                 <BsList />
               </div>
@@ -61,7 +62,7 @@ const Topbar: React.FC<TopbarProps> = ({problemPage}) => {
               <button className='bg-dark-fill-3 py-1 px-2 cursor-pointer rounded hover:bg-dark-fill-2'>Sign In</button>
             </Link>
           )}
-
+          {problemPage && <Timer />}
           {user && (
             <div className='cursor-pointer group relative'>
               <img src='/avatar.png' alt='Profile' className='h-8 w-8 rounded-full' />
