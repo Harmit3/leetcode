@@ -11,15 +11,21 @@ type PlaygroundProps = {
 };
 
 const Playground:React.FC<PlaygroundProps> = () => {
-    
+    const boilerPlate=`function twoSum(nums,target){
+      //write your code
+      const var1=2
+      const var2=10
+      return var1+var2;
+
+    };`
     return (
-    <div className='flex flex-col bg-dark-layer-1 relative'>
+    <div className='flex flex-col bg-dark-layer-1 relative overflow-x-hidden'>
        <PrefrenceNav />
 
        <Split className='h-[calc(100vh-94px)]' direction='vertical' sizes={[60,40]} minSize={60}>
             <div className="w-full overflow-auto">
                 <CodeMirror 
-                  value="return var1+var2;"
+                  value={boilerPlate}
                   theme={vscodeDark}
                   extensions={[javascript()]}
                   style={{fontSize:16}}
