@@ -5,15 +5,15 @@ import { Problem } from '@/utils/types/problem';
 import React from 'react';
 
 type problemPageProps = {
-    problem:Problem
+    problem: Problem
 };
 
-const problemPage:React.FC<problemPageProps> = ({problem}) => {
+const problemPage: React.FC<problemPageProps> = ({ problem }) => {
     console.log(problem);
     return (
         <div>
-        <Topbar problemPage/>
-        <Workspace />
+            <Topbar problemPage />
+            <Workspace problem={problem}/>
         </div>
     );
 }
@@ -29,31 +29,31 @@ export default problemPage;
 
 //1. getStaticPaths => it create the dynamic routes that should be pre-generated on the server
 
-export async function getStaticPaths(){
-    const paths=Object.keys(problems).map((key)=>({
-        params:{pid:key},
+export async function getStaticPaths() {
+    const paths = Object.keys(problems).map((key) => ({
+        params: { pid: key },
     }));
 
     return {
         paths,
-        fallback:false,
+        fallback: false,
     };
 }
 
 //2. getStaticProps => it fetches the data
 
-export async function getStaticProps({params}:{params:{pid:string}}){
-    const {pid}=params;
-    const problem=problems[pid];
+export async function getStaticProps({ params }: { params: { pid: string } }) {
+    const { pid } = params;
+    const problem = problems[pid];
 
-    if(!problem){
-        return{
-            notFound:true,
+    if (!problem) {
+        return {
+            notFound: true,
         };
     }
-
+     problem.handlerFunction=problem.handlerFunction.toString();
     return {
-        props:{
+        props: {
             problem,
         },
     };
