@@ -2,8 +2,23 @@ import Head from "next/head";
 import Topbar from "@/components/Topbar/Topbar";
 import ProblemsTable from "@/components/ProblemsTable/ProblemsTable";
 import { GoGoal } from "react-icons/go";
+import { useState } from "react";
 
 export default function Home() {
+  const [inputs,srtInputs]=useState({
+    id:'',
+    title:'',
+    difficulty:'',
+    category:'',
+    videoId:'',
+    link:'',
+    order:0,
+    likes:0,
+    dislike:0,
+  })
+
+  cost handleInputChnage=(e:)
+
   return (
     <>
       <main className="bg-dark-layer-2 min-h-screen">
@@ -59,7 +74,21 @@ export default function Home() {
             <ProblemsTable />
           </table>
         </div>
+
+
+        {/*temp form*/}
+        <form className="p-6 flex flex-col max-w-sm gap-3" onSubmit={handleSubmit}>
+          <input onClick={handleInputChange} type='text' placeholder='problem id' name='id' />
+          <input onClick={handleInputChange} type='text' placeholder='title' name='title' />
+          <input onClick={handleInputChange} type='text' placeholder='difficulty' name='difficulty' />
+          <input onClick={handleInputChange} type='text' placeholder='category' name='category' />
+          <input onClick={handleInputChange} type='text' placeholder='order' name='order' />
+          <input onClick={handleInputChange} type='text' placeholder='videoId?' name='videoId' />
+          <input onClick={handleInputChange} type='text' placeholder='link?' name='link' />
+
+          <button className="bg-white">Save to db</button>
+        </form>
       </main>
-    </>
+    </> 
   );
 }
