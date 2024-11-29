@@ -7,6 +7,8 @@ export type Example={
     img?:string;
 };
 
+
+//this is a local problem data
 export type Problem={
     id:string;
     title:string;
@@ -18,3 +20,16 @@ export type Problem={
     handlerFunction:((fn:any)=>boolean) | string;
     starterFunctionName:string;
 };
+
+//this is a DB problem
+export type DBProblem={
+    id:string;
+    title:string;
+    category:string;
+    difficulty:string;
+    likes:number;
+    dislikes:number;
+    order:number;
+    videoId?:string;
+    link?:string;
+}
