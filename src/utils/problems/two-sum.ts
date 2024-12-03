@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { Problem } from '@/utils/types/problem';
+import { Problem } from '../types/problem';
 
 
 export const starterCodeTwoSum = `function twoSum(nums,target){
@@ -80,8 +80,10 @@ export const twoSum: Problem = {
 								</li>`,
     handlerFunction: handlerTwoSum,
     startercode: starterCodeTwoSum,
-    order: 1,
+
     starterFunctionName: "function twoSum(",
+    order: 1,
+
 };
 
 

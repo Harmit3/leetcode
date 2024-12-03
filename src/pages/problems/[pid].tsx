@@ -5,7 +5,7 @@ import { Problem } from '@/utils/types/problem';
 import React from 'react';
 
 type problemPageProps = {
-    problem: Problem
+    problem:Problem;
 };
 
 const problemPage: React.FC<problemPageProps> = ({ problem }) => {

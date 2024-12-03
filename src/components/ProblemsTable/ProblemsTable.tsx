@@ -5,8 +5,7 @@ import { AiFillYoutube } from 'react-icons/ai';
 import YouTube from 'react-youtube';
 import { IoClose } from 'react-icons/io5';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
-import { firestore } from '@/firebase/firebase';
-import { tmpdir } from 'os';
+import { auth,firestore } from '@/firebase/firebase';
 import { DBProblem } from '@/utils/types/problem';
 
 type ProblemsTableProps = {
@@ -60,7 +59,7 @@ const ProblemsTable: React.FC<ProblemsTableProps> = ({ setLoadingProblems }) => 
                             <td className='px-6 py-4'>
                                 {problem.link ?
                                     (
-                                        <Link href={problem.link} className="hover:text-blue-600 cursor pointer" target="_blank">
+                                        <Link href={problem.link} className="hover:text-blue-600 cursor-pointer" target="_blank">
                                               {problem.title}
                                         </Link>
                                     ) :
@@ -133,6 +132,6 @@ function useGetProblems(setLoadingProblems: React.Dispatch<React.SetStateAction<
             setLoadingProblems(false);
         };
         getProblems();
-    }, [setLoadingProblems])
+    }, [setLoadingProblems]);
     return problems;
 }
