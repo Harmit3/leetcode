@@ -54,21 +54,21 @@ npm run dev
 
 7. Open http://localhost:3000 in your browser to see the application.
 
-Usage:
-Sign up for an account or log in.
-Browse the problem list.
-Select a problem to solve.
-Write your solution in the code editor.
-Run your code to see if it passes all test cases.
-Submit your solution when ready.
+## Usage:
+- Sign up for an account or log in.
+- Browse the problem list.
+- Select a problem to solve.
+- Write your solution in the code editor.
+- Run your code to see if it passes all test cases.
+- Submit your solution when ready.
 
-Deployment:
-This project can be easily deployed to Vercel:
-Push your code to a GitHub repository.
-Connect your GitHub account to Vercel.
-Select the repository and configure your project.
-Deploy.
+## Deployment:
+- This project can be easily deployed to Vercel:
+- Push your code to a GitHub repository.
+- Connect your GitHub account to Vercel.
+- Select the repository and configure your project.
+- Deploy.
 
 
-Contributing:
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Contributing:
+- Contributions are welcome! Please feel free to submit a Pull Request.
