@@ -102,7 +102,7 @@ export const reverseLinkedList: Problem = {
 	],
 	constraints: `<li class='mt-2'>The number of nodes in the list is the range <code>[0, 5000]</code>.</li>
 <li class='mt-2'><code>-5000 <= Node.val <= 5000</code></li>`,
-	startercode: starterCodeReverseLinkedListJS,
+	starterCode: starterCodeReverseLinkedListJS,
 	handlerFunction: reverseLinkedListHandler,
 	starterFunctionName: "function reverseLinkedList(",
 	order: 2,

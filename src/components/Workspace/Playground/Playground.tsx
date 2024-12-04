@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import Split from "react-split";
 import CodeMirror from "@uiw/react-codemirror";
@@ -28,7 +29,7 @@ export interface ISettings {
 
 const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved }) => {
 	const [activeTestCaseId, setActiveTestCaseId] = useState<number>(0);
-	let [userCode, setUserCode] = useState<string>(problem.startercode);
+	let [userCode, setUserCode] = useState<string>(problem.starterCode);
 
 	const [fontSize, setFontSize] = useLocalStorage("lcc-fontSize", "16px");
 
@@ -100,11 +101,11 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
 	useEffect(() => {
 		const code = localStorage.getItem(`code-${pid}`);
 		if (user) {
-			setUserCode(code ? JSON.parse(code) : problem.startercode);
+			setUserCode(code ? JSON.parse(code) : problem.starterCode);
 		} else {
-			setUserCode(problem.startercode);
+			setUserCode(problem.starterCode);
 		}
-	}, [pid, user, problem.startercode]);
+	}, [pid, user, problem.starterCode]);
 
 	const onChange = (value: string) => {
 		setUserCode(value);
