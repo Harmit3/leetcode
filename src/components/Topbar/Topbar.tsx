@@ -80,7 +80,7 @@ const Topbar: React.FC<TopbarProps> = ({problemPage}) => {
           <div>
             <a href=' https://buymeacoffee.com/harmitpate5' target='_blank' rel='noreferrer'
               className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'>
-              Premium
+              Support Me !
             </a>
           </div>
           {!user && (

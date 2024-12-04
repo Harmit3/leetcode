@@ -1,11 +1,15 @@
 import Topbar from "@/components/Topbar/Topbar";
 import ProblemsTable from "@/components/ProblemsTable/ProblemsTable";
 import { useState } from "react";
+import useHasMounted from "@/hooks/useHasMounted";
 
 
 export default function Home() {
 
   const [loadingProblems, setLoadingProblems] = useState(true);
+  const hasMounted=useHasMounted();
+
+  if(!hasMounted) return null;
   /*
   const [inputs,setInputs]=useState({
     id:'',
